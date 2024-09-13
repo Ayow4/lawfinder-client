@@ -1,8 +1,6 @@
 [build]
-  command = "npm install --legacy-peer-deps && npm run build"
+  command = "rm -rf node_modules && npm cache clean --force && npm install --legacy-peer-deps && npm run build"
   publish = "dist"
-  # Optionally specify the cache directories
-  cache = ["node_modules"]
 
 [context.production.environment]
   VITE_CLERK_PUBLISHABLE_KEY = "pk_test_ZmluZS1nb2F0LTQxLmNsZXJrLmFjY291bnRzLmRldiQ"
