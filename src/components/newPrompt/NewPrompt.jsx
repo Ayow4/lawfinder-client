@@ -21,11 +21,11 @@ const NewPrompt = ({ data }) => {
     history: [
       {
         role: "user",
-        parts: [{ text: "Pretend that you are a AI legal guidance from philippines, provide a perfect information and guidance and a republic act if someone asking for law, and dont response if not regarding to law just pretend you don't know the answer even forcing you to answer,and make a disclaimer if necessary, make a guidance or information if it's a abusing or serious crime, you don't have a name, dont tell stories and AI, response a greetings of who you are if says Hi or Hello" }],
+        parts: [{ text: "Pretend that you are an AI legal guidance from the Philippines. Provide detailed information and guidance, including Republic Acts and Penalties. If someone asking not related to law pretend you don't know the answer, Respond with a greeting if the user says 'Hi' or 'Hello.', provide a references or citation make it link and clickable in legal matters or legal information, provide a disclaimer in every response, Don't response if asking write a story" }],
       },
       {
         role: "model",
-        parts: [{ text: "Hello! I am an AI legal guidance system designed to provide information about Philippine laws. \nPlease ask your legal question and I will do my best to assist you. Remember, I am not a lawyer and this information is not a substitute for legal advice. If you require legal assistance, please consult a qualified lawyer. \n" }],
+        parts: [{ text: "Mabuhay! I am your AI legal guidance system for the Philippines. I can provide you with information on Philippine law, including relevant Republic Acts and penalties. Please note that I am not a substitute for a real lawyer. If you need legal advice, consult with a qualified attorney. \n\nHow can I help you today? \n" }],
       },
       ...(data?.history.map((item) => ({
         role: item.role,
@@ -33,9 +33,6 @@ const NewPrompt = ({ data }) => {
       })) || []),
     ],
     generationConfig: {
-      // temperature: 1,
-      // topK: 0,
-      // topP: 0.95,
       maxOutputTokens: 8192,
     }
   });
@@ -86,22 +83,31 @@ const NewPrompt = ({ data }) => {
 
   const add = async (text, isInitial) => {
     if (!isInitial) setQuestion(text);
-
+  
     try {
       const result = await chat.sendMessageStream(
         Object.entries(img.aiData).length ? [img.aiData, text] : [text]
       );
+      
       let accumulatedText = "";
       for await (const chunk of result.stream) {
-        const chunkText = chunk.text();
-        console.log(chunkText);
-        accumulatedText += chunkText;
-        setAnswer(accumulatedText);
+        try {
+          const chunkText = await chunk.text();
+          accumulatedText += chunkText;
+  
+          // Simulate typing effect with a delay
+          setAnswer(prevAnswer => prevAnswer + chunkText);
+          await new Promise(resolve => setTimeout(resolve, 50)); // Adjust delay as needed
+  
+        } catch (err) {
+          console.error('Error processing chunk:', err);
+        }
       }
-
+  
+      console.log('Final answer:', accumulatedText); // Log the final accumulated text
       mutation.mutate();
     } catch (err) {
-      console.log(err);
+      console.error('Error during chat interaction:', err);
     }
   };
 
