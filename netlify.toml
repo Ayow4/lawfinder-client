@@ -1,6 +1,6 @@
 [build]
   command = "npm install --force && npm run build"
-  publish = "build"
+  publish = "dist"
 
 [context.production.environment]
   VITE_CLERK_PUBLISHABLE_KEY = "pk_test_ZmluZS1nb2F0LTQxLmNsZXJrLmFjY291bnRzLmRldiQ"
