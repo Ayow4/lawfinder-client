@@ -1,0 +1,10 @@
+[build]
+  command = "npm install --force && npm run build"
+  publish = "build"
+
+[context.production.environment]
+  VITE_CLERK_PUBLISHABLE_KEY = "pk_test_ZmluZS1nb2F0LTQxLmNsZXJrLmFjY291bnRzLmRldiQ"
+  VITE_IMAGE_KIT_ENDPOINT = "https://ik.imagekit.io/nyfbwirap"
+  VITE_IMAGE_KIT_PUBLIC_KEY = "public_HSZnG3hNZicKLEY5JqZvYa/q1Lc="
+  VITE_GEMINI_PUBLIC_KEY = "AIzaSyC3atx69yLlGwYwh2_PkRzGRXtpsZg-xCk"
+  VITE_API_URL = "https://lawfinder-2adafd1bbdbc.herokuapp.com/"
