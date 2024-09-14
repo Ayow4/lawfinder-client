@@ -11,7 +11,6 @@ const ChatList = () => {
   queryFn: async () => {
     const token = await getToken();
     return fetch(`${import.meta.env.VITE_API_URL}/api/userchats`, {
-      method: "PUT",
       credentials: "include",
       headers: {
         Authorization: `Bearer ${token}`,
