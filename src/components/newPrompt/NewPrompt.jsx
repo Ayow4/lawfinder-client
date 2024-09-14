@@ -52,7 +52,7 @@ const NewPrompt = ({ data }) => {
   const mutation = useMutation({
     mutationFn: async () => {
       const token = await getToken(); // Ensure token is fetched
-      return fetch(`${import.meta.env.VITE_API_URL}/api/chats/${data._id}`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/chats/${data._id}`, {
         method: "PUT",
         credentials: "include",
         headers: {
@@ -64,7 +64,14 @@ const NewPrompt = ({ data }) => {
           answer,
           img: img.dbData?.filePath || undefined,
         }),
-      }).then((res) => res.json());
+      });
+  
+      if (!response.ok) {
+        const errorText = await response.text();
+        throw new Error(`Error ${response.status}: ${errorText}`);
+      }
+  
+      return response.json();
     },
     onSuccess: () => {
       queryClient
