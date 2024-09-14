@@ -4,15 +4,10 @@ import { useQuery } from '@tanstack/react-query'
 
 const ChatList = () => {
 
-  const { userId } = useUser(); // Use Clerk's useUser hook to get user data
-  const accessToken = userId?.session?.accessToken; // Get the access token
   const { isPending, error, data } = useQuery({
     queryKey: ["userChats"],
     queryFn: () =>
       fetch(`${import.meta.env.VITE_API_URL}/api/userchats`, {
-        headers: {
-          'Authorization': `Bearer ${accessToken}`,
-        },
         credentials: "include",
       }).then((res) =>
         res.json(),
