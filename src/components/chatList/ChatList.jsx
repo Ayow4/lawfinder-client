@@ -4,15 +4,18 @@ import { useQuery } from '@tanstack/react-query'
 
 const ChatList = () => {
 
+  const { getToken } = useAuth();
   const { isPending, error, data } = useQuery({
     queryKey: ["userChats"],
-    queryFn: () =>
-      fetch(`${import.meta.env.VITE_API_URL}/api/userchats`, {
-        credentials: "include",
-      }).then((res) =>
-        res.json(),
-      ),
-  });
+    queryFn: async () => {
+      const token = await getToken();
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/userchats`, {
+        headers: {
+          'Authorization': `Bearer ${token}`,
+        },
+        credentials: 'include',
+      });
+    }});
 
 
   return (
