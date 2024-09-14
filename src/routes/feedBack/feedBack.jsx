@@ -10,7 +10,7 @@ const FeedBack = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch("https://lawfinder-2adafd1bbdbc.herokuapp.com//api/feedback", {
+      const response = await fetch("https://lawfinder-720edb426225.herokuapp.com/api/feedback", {
         method: "POST",
         credentials: "include",
         headers: {
