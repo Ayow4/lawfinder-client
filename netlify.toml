@@ -1,5 +1,5 @@
 [build]
-  command = "rm -rf node_modules && npm cache clean --force && npm install --legacy-peer-deps && npm run build"
+  command = "npm run build"
   publish = "dist"
 
 [context.production.environment]
@@ -8,3 +8,8 @@
   VITE_IMAGE_KIT_PUBLIC_KEY = "public_HSZnG3hNZicKLEY5JqZvYa/q1Lc="
   VITE_GEMINI_PUBLIC_KEY = "AIzaSyC3atx69yLlGwYwh2_PkRzGRXtpsZg-xCk"
   VITE_API_URL = "https://lawfinder-2adafd1bbdbc.herokuapp.com/"
+
+  [[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
