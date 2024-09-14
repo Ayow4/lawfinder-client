@@ -4,8 +4,8 @@ import { useQuery } from '@tanstack/react-query'
 
 const ChatList = () => {
 
-  const { user } = useUser(); // Use Clerk's useUser hook to get user data
-  const accessToken = user?.session?.accessToken; // Get the access token
+  const { userId } = useUser(); // Use Clerk's useUser hook to get user data
+  const accessToken = userId?.session?.accessToken; // Get the access token
   const { isPending, error, data } = useQuery({
     queryKey: ["userChats"],
     queryFn: () =>
