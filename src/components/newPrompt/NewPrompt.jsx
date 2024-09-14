@@ -57,7 +57,7 @@ const NewPrompt = ({ data }) => {
         credentials: "include",
         headers: {
           "Content-Type": "application/json",
-          'Authorization': `Bearer ${token}`, // Pass token in header
+          Authorization: `Bearer ${token}`, // Ensure the token is being set correctly
         },
         body: JSON.stringify({
           question: question.length ? question : undefined,
