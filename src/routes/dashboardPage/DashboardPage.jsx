@@ -1,28 +1,43 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
-import './dashboardPage.css'
+import './dashboardPage.css';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '@clerk/clerk-react'; // Import useAuth to get the token
 
 const DashboardPage = () => {
-
   const queryClient = useQueryClient();
-
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const { getToken } = useAuth(); // Get the token using Clerk
 
   const mutation = useMutation({
-    mutationFn: (text) => {
-      return fetch(`${import.meta.env.VITE_API_URL}/api/chats`, {
-        method: "POST",
-        credentials: "include",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ text }),
-      }).then((res) => res.json());
+    mutationFn: async (text) => {
+      try {
+        const token = await getToken(); // Ensure token is fetched
+        
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/api/chats`, {
+          method: "POST",
+          credentials: "include",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`, // Set the authorization header
+          },
+          body: JSON.stringify({ text }),
+        });
+
+        if (!response.ok) {
+          const errorText = await response.text();
+          throw new Error(`Error ${response.status}: ${errorText}`);
+        }
+
+        return response.json();
+      } catch (err) {
+        console.error('Error creating chat:', err);
+        throw err; // Propagate error to be handled by react-query
+      }
     },
     onSuccess: (id) => {
       // Invalidate and refetch
       queryClient.invalidateQueries({ queryKey: ["userChats"] });
-      navigate(`/dashboard/chats/${id}`)
+      navigate(`/dashboard/chats/${id}`);
     },
   });
 
