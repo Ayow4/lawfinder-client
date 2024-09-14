@@ -11,10 +11,12 @@ const ChatList = () => {
   queryFn: async () => {
     const token = await getToken();
     return fetch(`${import.meta.env.VITE_API_URL}/api/userchats`, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
+      method: "PUT",
       credentials: "include",
+      headers: {
+        "Content-Type": "application/json",
+        'Authorization': `Bearer ${token}`, // Pass token in header
+      },
     }).then((res) => res.json());
   },
 });
