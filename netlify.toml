@@ -7,7 +7,7 @@
   VITE_IMAGE_KIT_ENDPOINT = "https://ik.imagekit.io/nyfbwirap"
   VITE_IMAGE_KIT_PUBLIC_KEY = "public_HSZnG3hNZicKLEY5JqZvYa/q1Lc="
   VITE_GEMINI_PUBLIC_KEY = "AIzaSyC3atx69yLlGwYwh2_PkRzGRXtpsZg-xCk"
-  VITE_API_URL = "https://lawfinderai.netlify.app/"
+  VITE_API_URL = "https://lawfinder-720edb426225.herokuapp.com/"
 
   [[redirects]]
   from = "/*"
