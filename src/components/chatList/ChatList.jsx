@@ -7,16 +7,17 @@ const ChatList = () => {
   const { getToken } = useAuth();
 
   const { isPending, error, data } = useQuery({
-    queryKey: ["userChats"],
-    queryFn: async () => {
-      const token = await getToken();
-      return fetch(`${import.meta.env.VITE_API_URL}/api/userchats`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      }).then((res) => res.json());
-    },
-  });
+  queryKey: ["userChats"],
+  queryFn: async () => {
+    const token = await getToken();
+    return fetch(`${import.meta.env.VITE_API_URL}/api/userchats`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+      credentials: "include",
+    }).then((res) => res.json());
+  },
+});
 
 
   return (
