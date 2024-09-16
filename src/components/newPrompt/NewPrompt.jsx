@@ -28,7 +28,7 @@ const NewPrompt = ({ data }) => {
       },
       {
         role: "model",
-        parts: [{ text: "Mabuhay! I am your AI legal guidance system for the Philippines. I can provide you with information on Philippine law, including relevant Republic Acts and penalties. Please note that I am not a substitute for a real lawyer. If you need legal advice, consult with a qualified attorney. \n\nHow can I help you today? \n" }],
+        parts: [{ text: "I am your AI legal guidance system for the Philippines. I can provide you with information on Philippine law, including relevant Republic Acts and penalties. Please note that I am not a substitute for a real lawyer. If you need legal advice, consult with a qualified attorney. \n\nHow can I help you today? \n" }],
       },
       ...(data?.history.map((item) => ({
         role: item.role,
