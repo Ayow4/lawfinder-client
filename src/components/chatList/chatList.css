@@ -20,8 +20,9 @@
   
     .list {
       display: flex;
-      flex-direction: column;
-      /*overflow: scroll;*/
+    flex-direction: column;
+    max-height: 200px; /* Adjust as per your design */
+    overflow-y: auto; /* Enable scrolling */
     }
   
     a {
