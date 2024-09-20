@@ -52,7 +52,7 @@
   
   .buttons {
     display: flex;
-    justify-content: center;
+    justify-content: space-between; /* Puts the buttons at opposite sides */
     gap: 1rem;
   }
   

@@ -29,15 +29,12 @@ const AgreeMent = () => {
       </div>
       
       <div className='buttons'>
-        {agreed ? (
-          <Link to="/dashboard">
-            <button>Continue</button>
-          </Link>
-        ) : (
-          <Link to="/">
-            <button>Cancel</button>
-          </Link>
-        )}
+      <Link to="/">
+          <button className="cancel">Cancel</button>
+        </Link>
+        <Link to="/dashboard">
+          <button disabled={!agreed}>Continue</button>
+        </Link>
       </div>
     </div>
   );
