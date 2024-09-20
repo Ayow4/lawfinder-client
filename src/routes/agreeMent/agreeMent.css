@@ -80,7 +80,7 @@
   }
   @media (max-width: 480px) {
     .agreeMent {
-      margin: 5rem auto; /* Further reduced margin for very small screens */
+      margin: 15rem auto; /* Further reduced margin for very small screens */
     }
   
     .agreeMent h2 {
@@ -104,7 +104,7 @@
 @media (max-width: 768px) { /* Tablet and small mobile devices */
     .agreeMent {
       padding: 1.5rem; /* Reduced padding for smaller screens */
-      margin: 10rem auto; /* Adjusted margin for smaller screens */
+      margin: 15rem auto; /* Adjusted margin for smaller screens */
     }
   
     .agreeMent h2 {
@@ -123,7 +123,7 @@
   
   @media (max-width: 600px) { /* Common mobile devices like iPhone XR */
     .agreeMent {
-      margin: 5rem auto; /* Further reduced margin for very small screens */
+      margin: 15rem auto; /* Further reduced margin for very small screens */
     }
   
     .agreeMent h2 {
@@ -146,7 +146,7 @@
   
   @media (max-width: 480px) { /* Extra small devices */
     .agreeMent {
-      margin: 3rem auto; /* Further reduced margin */
+      margin: 10rem auto; /* Further reduced margin */
       padding: 1rem; /* Smaller padding */
     }
   
