@@ -1,0 +1,85 @@
+.agreeMent {
+    background-color: #f9f9f9;
+    padding: 2rem;
+    max-width: 600px;
+    margin: 2rem auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .agreeMent h2 {
+    color: #333;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .agreeMent p {
+    color: #555;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  
+  .agreeMent p a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  
+  .agreeMent p a:hover {
+    text-decoration: underline;
+  }
+  
+  .agreeMent div {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .agreeMent input[type="checkbox"] {
+    margin-right: 0.5rem;
+    transform: scale(1.2);
+  }
+  
+  .agreeMent label {
+    color: #333;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .buttons a button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .buttons a button:hover {
+    background-color: #0056b3;
+  }
+  
+  .buttons a button:disabled {
+    background-color: #d3d3d3;
+    cursor: not-allowed;
+  }
+  
+  .buttons a button.cancel {
+    background-color: #ff4d4d;
+  }
+  
+  .buttons a button.cancel:hover {
+    background-color: #cc0000;
+  }
