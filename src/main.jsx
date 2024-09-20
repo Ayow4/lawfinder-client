@@ -13,6 +13,7 @@ import FaQ from "./routes/FaQ/faQ";
 import FeedBack from "./routes/feedBack/feedBack";
 import TermsOfService from "./routes/TermsOfService/TermsOfService";
 import PrivacyPolicy from "./routes/PrivacyPolicy/PrivacyPolicy";
+import AgreeMent from "./routes/agreeMent/AgreeMent";
 
 
 const router = createBrowserRouter([
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
       {
         path:"/feedback",
         element: <FeedBack/>,
+      },
+      {
+        path:"/agreement",
+        element: <AgreeMent/>,
       },
       {
         element: <DashboardLayout />,

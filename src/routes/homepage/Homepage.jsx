@@ -16,7 +16,7 @@ const Homepage = () => {
           Ai Lawfinder is designed to guide you through the maze of legal information,
           providing clarity and support whether you're new to legal matters or need a quick refresher.
         </h3>
-        <Link to="/dashboard">Get Started</Link>
+        <Link to="/agreement">Get Started</Link>
       </div>
       <div className="right">
         <div className="imgContainer">
