@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom";
 import Homepage from "./routes/homepage/Homepage";
 import DashboardPage from "./routes/dashboardPage/DashboardPage";
 import ChatPage from "./routes/chatPage/ChatPage";
@@ -14,11 +14,12 @@ import FeedBack from "./routes/feedBack/feedBack";
 import TermsOfService from "./routes/TermsOfService/TermsOfService";
 import PrivacyPolicy from "./routes/PrivacyPolicy/PrivacyPolicy";
 import AgreeMent from "./routes/agreeMent/AgreeMent";
+import { useUser } from '@clerk/clerk-react'; // Import useUser
 
 const ProtectedRoute = ({ element }) => {
-  const { isSignedIn } = useAuth();
+  const { user } = useUser(); // Check for user
 
-  return isSignedIn ? element : <Navigate to="/sign-in" />;
+  return user ? element : <Navigate to="/sign-in" />;
 };
 
 const router = createBrowserRouter([

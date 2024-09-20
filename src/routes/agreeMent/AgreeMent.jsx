@@ -1,10 +1,10 @@
 import './agreeMent.css';
 import { useState } from 'react';
-import { useAuth } from '@clerk/clerk-react'; // Make sure this import is present
+import { useUser  } from '@clerk/clerk-react'; // Make sure this import is present
 import { Link, Navigate } from 'react-router-dom';
 
 const AgreeMent = () => {
-    const { isSignedIn } = useAuth(); // Get the authentication status
+    const { user  } = useUser(); // Get the authentication status
     const [agreed, setAgreed] = useState(false);
 
   const handleAgreementChange = (e) => {
@@ -12,7 +12,7 @@ const AgreeMent = () => {
   };
 
   // If user is authenticated, redirect to the dashboard
-  if (isSignedIn) {
+  if (user) {
     return <Navigate to="/dashboard" replace />;
 }
 
