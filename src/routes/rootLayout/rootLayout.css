@@ -47,9 +47,33 @@
       }
     }
   }
+  
 
   main {
     flex: 1;
     overflow: auto;
+  }
+
+  /* Media Query for mobile responsiveness */
+  @media (max-width: 1080px) {
+    padding: 16px 24px; /* Reduced padding for mobile */
+
+    header {
+      flex-direction: column; /* Stack items vertically on small screens */
+      align-items: flex-start; /* Align items to the start */
+
+      .logo {
+        gap: 4px; /* Adjust gap for smaller screens */
+
+        img {
+          width: 28px; /* Smaller logo size for mobile */
+          height: 28px; 
+        }
+      }
+    }
+
+    main {
+      padding: 10px; /* Add padding to main for better spacing */
+    }
   }
 }
