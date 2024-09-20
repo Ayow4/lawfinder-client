@@ -15,6 +15,11 @@ import TermsOfService from "./routes/TermsOfService/TermsOfService";
 import PrivacyPolicy from "./routes/PrivacyPolicy/PrivacyPolicy";
 import AgreeMent from "./routes/agreeMent/AgreeMent";
 
+const ProtectedRoute = ({ element }) => {
+  const { isSignedIn } = useAuth();
+
+  return isSignedIn ? element : <Navigate to="/sign-in" />;
+};
 
 const router = createBrowserRouter([
   {
@@ -57,11 +62,11 @@ const router = createBrowserRouter([
         children: [
           {
             path: "/dashboard",
-            element: <DashboardPage />,
+            element: <ProtectedRoute element={<DashboardPage />} />,
           },
           {
             path: "/dashboard/chats/:id",
-            element: <ChatPage />,
+            element: <ProtectedRoute element={<ChatPage />} />,
           },
         ],
       },
