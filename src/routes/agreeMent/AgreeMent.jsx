@@ -42,7 +42,6 @@ const AgreeMent = () => {
           <button disabled={!agreed}>Continue</button>
         </Link>
       </div>
-      <AgreeMent isAuthenticated={isAuthenticated} />
     </div>
   );
 };
