@@ -1,42 +1,10 @@
-import { Link, useNavigate  } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import './homepage.css'
 import { TypeAnimation } from 'react-type-animation';
 import { useState } from 'react';
 
-const Modal = ({ content, onClose }) => {
-  return (
-    <div className="modal">
-      <div className="modal-content">
-        <span className="close" onClick={onClose}>&times;</span>
-        <h2>{content.title}</h2>
-        <p>{content.text}</p>
-        {/* Add a button inside the modal to proceed to dashboard */}
-        <button onClick={onClose}>I Agree</button>
-      </div>
-    </div>
-  );
-}
-
 const Homepage = () => {
   const [typingStatus, setTypingStatus] = useState("human1");
-  const [showModal, setShowModal] = useState(false); // State to show/hide modal
-  const [modalContent, setModalContent] = useState({}); // Content for modal
-  const navigate = useNavigate(); // For navigating to /dashboard
-
-   // Function to handle "Get Started" click and show Terms of Service & Privacy Policy modal
-   const handleGetStartedClick = () => {
-    setModalContent({
-      title: "Privacy Policy & Terms of Service",
-      text: "Before proceeding, please review our Privacy Policy and Terms of Service."
-    });
-    setShowModal(true); // Show the modal first
-  };
-
-  // Function to close the modal and navigate to the dashboard
-  const handleCloseModal = () => {
-    setShowModal(false); // Close the modal
-    navigate('/dashboard'); // Navigate to /dashboard after modal is closed
-  };
 
   return (
     <div className='homepage'>
@@ -48,8 +16,7 @@ const Homepage = () => {
           Ai Lawfinder is designed to guide you through the maze of legal information,
           providing clarity and support whether you're new to legal matters or need a quick refresher.
         </h3>
-       {/* Button to open modal for Privacy Policy & Terms of Service */}
-       <button onClick={handleGetStartedClick}>Get Started</button>
+        <Link to="/dashboard">Get Started</Link>
       </div>
       <div className="right">
         <div className="imgContainer">
@@ -108,13 +75,6 @@ const Homepage = () => {
           <Link to="/privacypolicy">Privacy Policy</Link>
         </div>
       </div>
-       {/* Modal for displaying Privacy Policy & Terms of Service */}
-       {showModal && (
-        <Modal 
-          content={modalContent} 
-          onClose={handleCloseModal} // Close modal and navigate to dashboard
-        />
-      )}
     </div>
   )
 }
