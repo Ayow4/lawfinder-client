@@ -13,9 +13,9 @@ const AgreeMent = () => {
     <div className='agreeMent'>
       <h2>Terms of Service & Privacy Policy</h2>
       <p>
-        By using our service, you agree to our 
-        <a href="/termsofservice" target="_blank" rel="noopener noreferrer">Terms of Service</a> 
-         and 
+        By using our service, you agree to our
+        <a href="/termsofservice" target="_blank" rel="noopener noreferrer"> Terms of Service</a>
+        &nbsp;and 
         <a href="/privacypolicy" target="_blank" rel="noopener noreferrer"> Privacy Policy</a>.
       </p>
       <div>
