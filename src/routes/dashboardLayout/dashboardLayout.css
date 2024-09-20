@@ -1,47 +1,28 @@
 .dashboardLayout {
-  display: flex;
-  gap: 50px;
-  padding-top: 20px;
-  height: 100%;
-
-  .menu {
+    display: flex;
+    gap: 50px;
+    padding-top: 20px;
+    height: 100%;
+  
+    .menu {
       flex: 1;
-  }
-
-  .content {
+    }
+  
+    .content {
       flex: 4;
       background-color: #12101b;
+    }
   }
-}
-
-@media (max-width: 1024px) {
-  .dashboardPage .texts {
-      width: 80%; /* Adjusted for tablets */
-  }
-
-  .dashboardPage .formContainer {
-      width: 80%; /* Adjusted for tablets */
-  }
-}
-
-@media (max-width: 767px) {
-  .dashboardLayout {
+  @media (max-width: 767px) {
+    .dashboardLayout {
       flex-direction: column;
-  }
-
-  .dashboardLayout .menu {
-      display: none; /* Hides menu on smaller screens */
-  }
-
-  .dashboardLayout .content {
+    }
+  
+    .dashboardLayout .menu {
+      display: none;
+    }
+  
+    .dashboardLayout .content {
       flex: 1;
+    }
   }
-
-  .dashboardPage {
-      padding: 20px; /* Added padding for smaller screens */
-  }
-
-  .dashboardPage .texts {
-      width: 100%; /* Full width on smaller screens */
-  }
-}
