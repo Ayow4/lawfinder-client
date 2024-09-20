@@ -38,13 +38,3 @@
         }
       }
     }
-    @media (max-width: 1080px) {
-      .newForm {
-          padding: 10px; /* Ensure enough padding for touch interactions */
-      }
-  
-      .newForm input {
-          padding: 10px; /* Adjust padding for smaller screens */
-          font-size: 14px; /* Smaller font size for mobile */
-      }
-  }

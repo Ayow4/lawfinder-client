@@ -53,8 +53,3 @@
     overflow: auto;
   }
 }
-@media (min-width: 1200px) {
-  .rootLayout {
-    font-size: 18px;
-  }
-}
