@@ -1,13 +1,19 @@
 import './agreeMent.css';
 import { useState } from 'react';
+import { useAuth } from '@clerk/clerk-react'; // Import Clerk's hook
 import { Link } from 'react-router-dom';
 
 const AgreeMent = () => {
-  const [agreed, setAgreed] = useState(false);
+    const { isSignedIn } = useAuth(); // Get the authentication status
+    const [agreed, setAgreed] = useState(false);
 
   const handleAgreementChange = (e) => {
     setAgreed(e.target.checked);
   };
+  // If user is authenticated, do not render the agreement
+  if (isSignedIn) {
+    return null; // or redirect to dashboard
+  }
 
   return (
     <div className='agreeMent'>
@@ -36,6 +42,7 @@ const AgreeMent = () => {
           <button disabled={!agreed}>Continue</button>
         </Link>
       </div>
+      <AgreeMent isAuthenticated={isAuthenticated} />
     </div>
   );
 };
