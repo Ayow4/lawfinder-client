@@ -34,7 +34,7 @@ const AgreeMent = () => {
             <button>Continue</button>
           </Link>
         ) : (
-          <Link to="/homepage">
+          <Link to="/">
             <button>Cancel</button>
           </Link>
         )}
