@@ -78,3 +78,25 @@
   .buttons a button.cancel:hover {
     background-color: #cc0000;
   }
+  @media (max-width: 480px) {
+    .agreeMent {
+      margin: 5rem auto; /* Further reduced margin for very small screens */
+    }
+  
+    .agreeMent h2 {
+      font-size: 18px; /* Smaller font size for headings */
+    }
+  
+    .agreeMent p {
+      font-size: 12px; /* Smaller font size for paragraphs */
+    }
+  
+    .buttons {
+      flex-direction: column; /* Stack buttons vertically on very small screens */
+    }
+  
+    .buttons a button {
+      width: 100%; /* Full width buttons on very small screens */
+      margin-bottom: 1rem; /* Space between stacked buttons */
+    }
+  }
