@@ -12,7 +12,7 @@ const AgreeMent = () => {
   };
   // If user is authenticated, do not render the agreement
   if (isSignedIn) {
-    return null; // or redirect to dashboard
+    return <Navigate to="/dashboard" replace />;
   }
 
   return (
