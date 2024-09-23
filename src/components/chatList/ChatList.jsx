@@ -28,7 +28,7 @@ const ChatList = () => {
       <span className="title">RECENT CHATS</span>
       <div className="list">
         {isPending
-          ? ""
+          ? "Loading..."
           : error
           ? ""
           : data?.map((chat) => (
