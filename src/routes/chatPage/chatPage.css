@@ -47,8 +47,7 @@
 /* Responsive Design */
   @media (max-width: 1024px) {
     .wrapper {
-      /*padding: 0 10px; /* Add padding for better spacing */
-        display: none;
+        padding: 0 10px; /* Add padding for better spacing */
     }
 
     .chat {
