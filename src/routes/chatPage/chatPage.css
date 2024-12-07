@@ -41,16 +41,3 @@
       }
     }
   }
-
-@media (max-width: 768px) {
-    .wrapper .chat {
-      width: 100%;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .wrapper .chat {
-      gap: 5px;
-    }
-  }
-}
