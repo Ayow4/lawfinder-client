@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'; // Add useState here
+
 import { Outlet, useNavigate } from 'react-router-dom'
 import './dashboardLayout.css'
 import { useAuth } from '@clerk/clerk-react'
