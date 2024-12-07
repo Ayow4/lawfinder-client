@@ -43,3 +43,51 @@
       }
     }
   }
+
+/* Responsive Design */
+  @media (max-width: 1024px) {
+    .wrapper {
+      padding: 0 10px; /* Add padding for better spacing */
+    }
+
+    .chat {
+      width: 70%; /* Adjust chat width for tablets */
+    }
+
+    .chat .message {
+      padding: 15px; /* Reduce padding for smaller screens */
+    }
+  }
+
+  @media (max-width: 768px) {
+    .wrapper {
+      padding: 0 5px; /* Further reduce padding */
+    }
+
+    .chat {
+      width: 90%; /* Adjust chat width for mobile screens */
+    }
+
+    .chat p, .chat li {
+      font-size: 0.9rem; /* Reduce font size slightly */
+    }
+
+    .chat .message {
+      padding: 12px; /* Reduce padding for mobile */
+    }
+  }
+
+  @media (max-width: 480px) {
+    .chat {
+      width: 100%; /* Full width for very small screens */
+    }
+
+    .chat .message {
+      padding: 10px; /* Further reduce padding */
+    }
+
+    .chat p, .chat li {
+      font-size: 0.8rem; /* Further reduce font size */
+    }
+  }
+}
