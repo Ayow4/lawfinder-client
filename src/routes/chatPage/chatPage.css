@@ -77,17 +77,20 @@
     }
   }
 
-  @media (max-width: 480px) {
-    .chat {
-      width: 100%; /* Full width for very small screens */
-    }
+ @media (max-width: 480px) {
+  .chat {
+    width: 100%; /* Full width for very small screens */
+  }
 
-    .chat .message {
-      padding: 10px; /* Further reduce padding */
-    }
+  .chat .message {
+    padding: 10px; /* Further reduce padding */
+  }
 
-    .chat p, .chat li {
-      font-size: 0.8rem; /* Further reduce font size */
-    }
+  .chat p, .chat li {
+    font-size: 0.8rem; /* Further reduce font size */
+  }
+
+  .wrapper {
+    display: none; /* Hide the wrapper on very small screens */
   }
 }
