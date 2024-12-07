@@ -102,3 +102,14 @@
       }
     }
   }
+
+@media (max-width: 768px) {
+    .texts {
+      width: 90%;
+    }
+
+    .formContainer {
+      width: 100%;
+    }
+  }
+}
