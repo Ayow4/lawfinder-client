@@ -1,28 +1,49 @@
 .dashboardLayout {
-    display: flex;
-    gap: 50px;
-    padding-top: 20px;
-    height: 100%;
-  
+  display: flex;
+  gap: 50px;
+  padding-top: 20px;
+  height: 100%;
+
+  .menu {
+    flex: 1;
+  }
+
+  .content {
+    flex: 4;
+    background-color: #12101b;
+  }
+
+  // Responsive adjustments for tablets and smaller devices
+  @media (max-width: 1024px) {
+    gap: 20px;
+
     .menu {
-      flex: 1;
+      flex: 0.5; // Reduce the width of the menu
     }
-  
+
     .content {
-      flex: 4;
-      background-color: #12101b;
+      flex: 3.5; // Adjust content width
     }
   }
+
   @media (max-width: 767px) {
-    .dashboardLayout {
-      flex-direction: column;
+    flex-direction: column;
+
+    .menu {
+      display: none; // Hide the menu on small screens
     }
-  
-    .dashboardLayout .menu {
-      display: none;
-    }
-  
-    .dashboardLayout .content {
+
+    .content {
       flex: 1;
     }
   }
+
+  @media (max-width: 480px) {
+    padding-top: 10px;
+
+    .content {
+      padding: 10px; // Add padding for smaller screens
+      background-color: #1c1a28; // Slightly lighter background for better readability
+    }
+  }
+}
