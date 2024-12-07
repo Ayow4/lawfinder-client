@@ -62,3 +62,19 @@
       }
     }
   }
+ @media (max-width: 768px) {
+    .list {
+      max-height: 100px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .list {
+      max-height: 80px;
+    }
+
+    .upgrade {
+      gap: 5px;
+    }
+  }
+}
