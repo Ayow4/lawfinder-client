@@ -48,6 +48,7 @@
   @media (max-width: 1024px) {
     .wrapper {
         padding: 0 10px; /* Add padding for better spacing */
+        justify-content: flex-start; /* Change justify-content for mobile screens */
     }
 
     .chat {
